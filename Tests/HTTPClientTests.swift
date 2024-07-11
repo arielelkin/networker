@@ -5,12 +5,13 @@
 //  Created by Ariel Elkin on 17/07/2019.
 //  Copyright © 2019 IRIS. All rights reserved.
 //
+// swiftlint:disable force_try nesting
 
 import XCTest
 
 @testable import Networker
 
-class HTTPClientTests: XCTestCase { // swiftlint:disable force_try nesting
+class HTTPClientTests: XCTestCase {
     struct MockErrorType: Error, Codable {
         let message: String
     }
@@ -81,3 +82,5 @@ class MockURLProtocol: URLProtocol {
 
     override func stopLoading() {}
 }
+
+// swiftlint:enable force_try nesting

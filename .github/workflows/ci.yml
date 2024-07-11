@@ -15,38 +15,16 @@ on:
   pull_request:
 
 jobs:
-  macos11:
-    runs-on: macos-11
+  build-and-test:
+    runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
-      - name: SwiftLint
-        run: |
-          curl -OJs https://raw.githubusercontent.com/shapedbyiris/swiftlint-config/master/swiftlint.yml
-          swiftlint lint --strict --config swiftlint.yml
+      - name: Lint
+        run: swiftformat --lint --swiftversion 5.5 .
 
       - name: Build
         run: swift build
 
       - name: Test
         run: swift test
-
-  macos12:
-    runs-on: macos-12
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: SwiftLint
-        run: |
-          curl -OJs https://raw.githubusercontent.com/shapedbyiris/swiftlint-config/master/swiftlint.yml
-          swiftlint lint --strict --config swiftlint.yml
-
-      - name: Build
-        run: swift build
-
-      - name: Test
-        run: swift test
-
-
-
-
