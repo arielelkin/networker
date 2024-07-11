@@ -23,7 +23,7 @@ class HTTPClientTests: XCTestCase { // swiftlint:disable force_try nesting
         typealias SuccessfulResponseDataType = MockSuccessType
         typealias ErrorResponseDataType = MockErrorType
 
-        let request = URLRequest(url: URL(string: "https://example.com")!)
+        var request = URLRequest(url: URL(string: "https://example.com")!)
     }
 
     func testLoaderSuccess() async throws {
@@ -49,7 +49,7 @@ class HTTPClientTests: XCTestCase { // swiftlint:disable force_try nesting
             XCTAssert(result.value == 42)
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 1)
+        await fulfillment(of: [expectation])
     }
 }
 
