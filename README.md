@@ -41,7 +41,7 @@ print(result.slideshow.author) // "Yours Truly"
 In `Packages.swift`:
 ```swift
 // Add this line in the `dependencies` array:
-.package(url: "https://github.com/shapedbyiris/networker.git", from: "1.0.0")
+.package(url: "https://github.com/arielelkin/networker", from: "1.0.0")
 
 // Add Networker to your target's dependencies:
 .dependencies: ["Networker"]
