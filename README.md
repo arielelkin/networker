@@ -33,20 +33,6 @@ let result = try await SlideshowRequest().perform()
 print(result.slideshow.author) // "Yours Truly"
 ```
 
-
-## Integration
-
-### Swift Package Manager
-
-In `Packages.swift`:
-```swift
-// Add this line in the `dependencies` array:
-.package(url: "https://github.com/arielelkin/networker", from: "1.0.0")
-
-// Add Networker to your target's dependencies:
-.dependencies: ["Networker"]
-```
-
 ## Inspiration
 
 [WWDC 2018 session 417 _Testing Tips & Tricks_](https://developer.apple.com/videos/play/wwdc2018/417/)
